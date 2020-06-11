@@ -39,3 +39,27 @@ cacheSolve <- function(x, ...) {
   x$setInverse(i)
   i
 }
+
+### Checking The Code
+
+# > m <- matrix(rnorm(4), 2, 2)
+# > m
+# [,1]        [,2]
+# [1,]  0.8624581 -0.09034939
+# [2,] -2.6891041 -0.47685152
+# > madeMatrix <- makeCacheMatrix(m)
+# > madeMatrix$getInverse()
+# NULL
+# > cacheSolve(madeMatrix)
+# [,1]       [,2]
+# [1,]  0.7288818 -0.1381017
+# [2,] -4.1103761 -1.3182930
+# > cacheSolve(madeMatrix)
+# getting cached inverse
+# [,1]       [,2]
+# [1,]  0.7288818 -0.1381017
+# [2,] -4.1103761 -1.3182930
+# > madeMatrix$getInverse()
+# [,1]       [,2]
+# [1,]  0.7288818 -0.1381017
+# [2,] -4.1103761 -1.3182930
